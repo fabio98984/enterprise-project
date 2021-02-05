@@ -18,26 +18,26 @@
           <img src="img/gp.png">
         </div>
         <form id="login" class="input-group">
-          <input type="text" name="username" class="input-field" placeholder="User ID">
+          <input type="text" name="username" class="input-field" placeholder="Username">
           <input type="password" name="password" class="input-field" placeholder="Enter Password"></br></br>
           <div class="user-selection">
-            <label class="label" for="userType">I am a: </label></br>
-            <input type="radio" name="userType" value="Student" class="custom-radio">👥 Student</br>
-            <input type="radio" name="userType" value="Tutor" class="custom-radio">👥 Tutor</br>
-            <input type="radio" name="userType" value="Employer" class="custom-radio">👥 Employer</br>
+              <label class="label" for="userType">I am a: </label></br>
+                <input type="radio" name="userType" value="Student" class="custom-radio">👥 Student</br>
+                <input type="radio" name="userType" value="Tutor" class="custom-radio">👥 Tutor</br>
+                <input type="radio" name="userType" value="Employer" class="custom-radio">👥 Employer</br>
           </div>
           <input type="checkbox" class="check-box"><span>Remember Password</span>
           <button type="submit" class="submit-btn"> Login in</button>
         </form>
-        <form id="register" class="input-group">
-          <input type="text" name="username" class="input-field" placeholder="User ID">
-          <input type="email" name="email" class="input-field" placeholder="Email ID">
+        <form id="register" action="adduser.php" method="post" class="input-group">
+          <input type="text" name="username" class="input-field" placeholder="Username">
+          <input type="email" name="email" class="input-field" placeholder="Email">
           <input type="password" name="password" class="input-field" placeholder="Enter Password"></br>
           <div class="user-selection">
-            <label class="label" for="userType">I am a: </label></br>
-            <input type="radio" name="userType" value="Student" class="custom-radio">👥 Student</br>
-            <input type="radio" name="userType" value="Tutor" class="custom-radio">👥 Tutor</br>
-            <input type="radio" name="userType" value="Employer" class="custom-radio">👥 Employer</br></br>
+              <label class="label" for="userType">I am a: </label></br>
+                <input type="radio" name="userType" value="Student" class="custom-radio">👥 Student</br>
+                <input type="radio" name="userType" value="Tutor" class="custom-radio">👥 Tutor</br>
+                <input type="radio" name="userType" value="Employer" class="custom-radio">👥 Employer</br></br>
           </div>
           <button type="submit" class="submit-btn"> Register</button>
         </form>
@@ -60,8 +60,5 @@
       }
 
     </script>
-
-
-
   </body>
 </html>
