@@ -41,8 +41,8 @@
       		<div class="container">
       			<div class="row justify-content-center">
       				<div class="col-md-6 text-center mb-5">
-      					<h2 class="heading-section">STUDENTS</h2>
-                <button type="submit" name="delete" id="delete" class="example_a" value="Delete Records">Delete Records</button>
+      					<h2 class="heading-section">Standards</h2>
+                  <button type="submit" formaction="../enterprise-project/add-standard.php" class="example_b" value="Add Standard">Add Standard</button> <button type="submit" name="delete" id="delete" class="example_a" value="Delete Records">Delete Records</button>
       				</div>
       			</div>
       			<div class="row">
@@ -51,9 +51,9 @@
       						<table class="table table-bordered table-dark table-hover">
       						  <thead>
                       <tr>
-      						      <th>Student ID</th>
-                        <th>Student Email</th>
-                        <th>Student Username</th>
+      						      <th>Standard ID</th>
+                        <th>Standard Name</th>
+                        <th>Created at</th>
                         <th>Remove</th>
       						    </tr>
       						  </thead>
@@ -64,12 +64,12 @@
                           die("Connection Failed:". $conn-> connect_error);
                         }
 
-                        $sql = 'SELECT id, username, user_type FROM users';
+                        $sql = 'SELECT id, standard_name, created_at FROM standards';
                         $result = $conn-> query($sql);
 
                         if ($result-> num_rows > 0) {
                           while ($row = $result-> fetch_assoc()) {
-                            echo "<tr><td>". $row['id'] ."</td><td>". $row['username'] ."</td><td>". $row['user_type'] ."</td><td><input type='checkbox' name='checkbox[]' value='".$row['id']."'></td></tr>";
+                            echo "<tr><td>". $row['id'] ."</td><td>". $row['standard_name'] ."</td><td>". $row['created_at'] ."</td><td><input type='checkbox' name='checkbox[]' value='".$row['id']."'></td></tr>";
                           }
                           echo "</tbody></table>";
                         }
