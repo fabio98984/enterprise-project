@@ -14,7 +14,7 @@
 					<a href="tutor-area.php">APPRENTICESHIP</a>
 				</div>
 				<nav>
-					<a href="turtor-student-management.php">STUDENTS</a> <a href="student-research.php">RESEARCH</a> <a href="student-open-source.php">OPEN SOURCE</a> <a href="student-soft-skills.php">SOFT SKILLS</a> <a href="student-network.php">NETWORK</a>
+					<a href="tutor-student-management.php">STUDENTS</a> <a href="student-research.php">RESEARCH</a> <a href="student-open-source.php">OPEN SOURCE</a> <a href="student-soft-skills.php">SOFT SKILLS</a> <a href="student-network.php">NETWORK</a>
 				</nav>
 			</div>
 		</header>
