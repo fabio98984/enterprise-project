@@ -9,13 +9,10 @@ if($link === false){
 }
 
 // Escape user inputs for security
-$username = mysqli_real_escape_string($link, $_REQUEST['username']);
-$password = mysqli_real_escape_string($link, $_REQUEST['password']);
-$usertype = mysqli_real_escape_string($link, $_REQUEST['userType']);
-$email = mysqli_real_escape_string($link, $_REQUEST['email']);
+$standard = mysqli_real_escape_string($link, $_REQUEST['standard_name']);
 
 // Attempt insert query execution
-$sql = "INSERT INTO users (username, password, user_type, email) VALUES ('$username', '$password', '$usertype', '$email')";
+$sql = "INSERT INTO standards (standard_name) VALUES ('$standard')";
 if(mysqli_query($link, $sql)){
     header("Location:tutor-standard-management.php");
 } else{

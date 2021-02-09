@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-  $conn = mysqli_connect("localhost", "root", "", "enterprisedb");
-  if ($conn-> connect_error) {
-    die("Connection Failed:". $conn-> connect_error);
-  }
- ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,6 +17,8 @@
   	<link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="css/button.css">
+
+    <link rel="stylesheet" href="css/standard.css">
 </head>
 <body>
 	<div class="box-area">
@@ -36,13 +32,17 @@
 				</nav>
 			</div>
 		</header>
-    <form method="post" action="record-delete.php">
         <section class="ftco-section">
       		<div class="container">
       			<div class="row justify-content-center">
       				<div class="col-md-6 text-center mb-5">
       					<h2 class="heading-section">Standards</h2>
-                  <button type="submit" formaction="../enterprise-project/add-standard.php" class="example_b" value="Add Standard">Add Standard</button> <button type="submit" name="delete" id="delete" class="example_a" value="Delete Records">Delete Records</button>
+                  <div class="test">
+                      <form action="record-delete.php" method="post">
+                        <button type="submit" name="delete" id="delete" class="example_a" value="Delete Records">Delete Records</button>
+                      </form>
+                    <button onclick="togglePopup()" class="example_b" value="Add Standard">Add Standard</button>
+                  </div>
       				</div>
       			</div>
       			<div class="row">
@@ -83,12 +83,26 @@
       			</div>
       		</div>
       	</section>
-      </form>
-  	<script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-
+          <div class="popup" id="popup-1">
+              <div class="overlay"></div>
+              <div class="content">
+                <div class="close-btn" onclick="togglePopup()">&times;</div>
+                <h1>Select a name:</h1>
+                <p>
+                  <form action="addstandard.php" method="post">
+                    <label for="fname">Standard Name:</label><br>
+                      <input type="text" id="standard_name" name="standard_name"><br>
+                      <p></p>
+                      <input type="submit" class="example_c" value="Submit">
+                  </form>
+                </p>
+              </div>
+          </div>
+    	<script src="js/jquery.min.js"></script>
+      <script src="js/popper.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/standard.js"></script>
 	</div>
 </body>
 </html>
