@@ -6,7 +6,7 @@
 .hero{
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"));
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png);
   background-position: center;
   background-size: cover;
   position: absolute;
