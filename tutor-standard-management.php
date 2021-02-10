@@ -28,7 +28,7 @@
 					<a href="tutor-area.php">APPRENTICESHIP</a>
 				</div>
 				<nav>
-					<a href="tutor-student-management.php">STUDENTS</a> <a href="tutor-standard-management.php">STANDARDS</a>
+          <a href="tutor-student-management.php">STUDENTS</a> <a href="tutor-standard-management.php">STANDARDS</a> <a href="tutor-document-management.php">DOCUMENTS</a>
 				</nav>
 			</div>
 		</header>
