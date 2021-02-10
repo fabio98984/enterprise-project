@@ -2,33 +2,39 @@
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 $link = mysqli_connect("localhost", "root", "", "enterprisedb");
-$msg = "";
 
-if (isset($_POST['login'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Escape user inputs for security
-    $username = $_POST['username1'];
-    $password = $_POST['password'];
-    $password = sha1($password);
-    $usertype = $_POST['userType'];
+    $myusername = mysqli_real_escape_string($link, $_POST['username1']);
+    $mypassword = mysqli_real_escape_string($link, $_POST['password']);
+    $usertype = mysqli_real_escape_string($link, $_POST['userType']);
 
     // Attempt insert query execution
-    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password' AND user_type ='$usertype'";
+    $sql = "SELECT id FROM users WHERE username = '$myusername' AND password = '$mypassword' AND user_type ='$usertype'";
+    $result = mysqli_query($link,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $active = $row['active'];
 
-    if(mysqli_query($link, $sql)==){
+    $count = mysqli_num_rows($result);
+
+    if($count == 1 && $usertype == "Student"){
+
       header("location:student.php");
     }
-    else if(){
+    else if($count == 1 && $usertype == "Tutor"){
+
       header("location:tutor-area.php");
     }
-    else if(){
+    else if($count == 1 && $usertype == "Employer"){
+
       header("location:employer-area.php");
     }
     else{
-      $msg = "Username or Password are incorrect!";
+    echo "Username or Password are incorrect!";
     }
 }
 // Close connection
-mysqli_close($mysqli);
+mysqli_close($link);
 ?>
 <html>
   <head>
