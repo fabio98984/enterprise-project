@@ -36,7 +36,7 @@
 				</nav>
 			</div>
 		</header>
-    <form method="post" action="record-delete.php">
+    <form method="post" action="">
         <section class="ftco-section">
       		<div class="container">
       			<div class="row justify-content-center">
@@ -53,7 +53,6 @@
       						      <th>Student ID</th>
                         <th>Student Email</th>
                         <th>Student Username</th>
-                        <th>Remove</th>
       						    </tr>
       						  </thead>
                     <tbody>
@@ -63,12 +62,12 @@
                           die("Connection Failed:". $conn-> connect_error);
                         }
 
-                        $sql = 'SELECT id, username, user_type FROM users';
+                        $sql = "SELECT id, username, user_type FROM users WHERE (user_type = 'Student')";
                         $result = $conn-> query($sql);
 
                         if ($result-> num_rows > 0) {
                           while ($row = $result-> fetch_assoc()) {
-                            echo "<tr><td>". $row['id'] ."</td><td>". $row['username'] ."</td><td>". $row['user_type'] ."</td><td><input type='checkbox' name='checkbox[]' value='".$row['id']."'></td></tr>";
+                            echo "<tr><td>". $row['id'] ."</td><td>". $row['username'] ."</td><td>". $row['user_type'] ."</td></tr>";
                           }
                           echo "</tbody></table>";
                         }

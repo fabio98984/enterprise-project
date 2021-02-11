@@ -97,21 +97,11 @@
   		</div>
   	</section>
     <div class="box-area">
-  		<header>
-  			<div class="wrapper">
-          <div class="logo">
-  					<a href="student.php">APPRENTICESHIP</a>
-  				</div>
-  				<nav>
-            <a href="tutor-student-management.php">STUDENTS</a> <a href="tutor-standard-management.php">STANDARDS</a> <a href="tutor-document-management.php">DOCUMENTS</a>
-  				</nav>
-  			</div>
-  		</header>
       <section class="ftco-section">
     		<div class="container">
     			<div class="row justify-content-center">
     				<div class="col-md-6 text-center mb-5">
-    					<h2 class="heading-section">DOCUMENTS</h2>
+    					<h2 class="heading-section">RESEARCH</h2>
               <div class="test">
                   <form action="record-update.php" method="post">
                     <button type="submit" name="gradeupdate" id="gradeupdate" class="example_b" value="Update Grades">Update Grades</button>
@@ -141,7 +131,7 @@
                         die("Connection Failed:". $conn-> connect_error);
                       }
 
-                      $sql = 'SELECT id, dName, ksb, name, mime, size, data, created FROM file';
+                      $sql = 'SELECT id, dName, ksb, name, mime, size, data, created FROM research';
                       $result = $conn-> query($sql);
 
                       if ($result-> num_rows > 0) {

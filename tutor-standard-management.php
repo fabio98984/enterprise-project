@@ -39,7 +39,7 @@
       					<h2 class="heading-section">Standards</h2>
                   <div class="test">
                       <form action="record-delete.php" method="post">
-                        <button type="submit" name="delete" id="delete" class="example_a" value="Delete Records">Delete Records</button>
+                        <button type="submit" name="delete_standard" id="delete_standard" class="example_a" value="Delete Records">Delete Records</button>
                       </form>
                     <button onclick="togglePopup()" class="example_b" value="Add Standard">Add Standard</button>
                   </div>

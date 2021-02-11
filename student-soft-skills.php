@@ -30,22 +30,21 @@
 				</nav>
 			</div>
 		</header>
+
     <section class="ftco-section">
   		<div class="container">
   			<div class="row justify-content-center">
   				<div class="col-md-6 text-center mb-5">
   					<h2 class="heading-section">SOFT SKILLS</h2>
             <div class="test">
-                <form action="record-delete.php" method="post">
-                  <button type="submit" name="delete" id="delete" class="example_a" value="Delete Records">Delete Records</button>
-                </form>
-              <button onclick="togglePopup()" class="example_b" value="Add a new document">Add new document</button>
+                <button onclick="togglePopup()" class="example_b" value="Add a new document">Add new document</button>
             </div>
   				</div>
   			</div>
   			<div class="row">
   				<div class="col-md-12">
   					<div class="table-wrap">
+            <form action="record-delete.php" method="post">
   						<table class="table table-bordered table-dark table-hover">
   						  <thead>
                   <tr>
@@ -57,7 +56,7 @@
                     <th>Size</th>
                     <th>Created</th>
                     <th>Delete</th>
-                    <th>Grade</th>
+                    <th>Option</th>
   						    </tr>
   						  </thead>
                 <tbody>
@@ -79,9 +78,11 @@
                         <td>". $row['mime'] ."</td>
                         <td>". $row['size'] ."</td>
                         <td>". $row['created'] ."</td>
-                        <td><input type='checkbox' name='checkbox[]' value='".$row['id']."'></td></tr>";
+                        <td><input type='checkbox' name='checkbox[]' value='".$row['id']."'></td>
+                        <td><button type='submit' name='delete_soft' id='delete' class='example_c' value='Delete Records'>Delete</button></td>
+                        </tr>";
                       }
-                      echo "</tbody></table>";
+                      echo "</tbody></table></form>";
                     }
                     else {
                       echo "0 result";
